@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Employee Manager System</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Employee infomation form:</h1>
+        <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="POST" class="form">
+            <label th:for="name">Name</label>
+            <input type="text" th:field="*{name}" class="form-control mb-4 col-4" placeholder="Enter Employee Name" required>
+            <label th:for="email">Email</label>
+            <input type="email" th:field="*{email}" class="form-control mb-4 col-4" placeholder="Enter Employee Email" required>
+            <input type="submit" value="Confirm" class="btn btn-success">
+        </form>
+        <a th:href="@{/}" class="btn btn-primary">Back to Homepage</a>
+    </div>
+</body>
+</html>
